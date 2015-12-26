@@ -17,6 +17,7 @@
 LOCAL_PATH := device/xiaomi/hermes
 -include vendor/xiaomi/hermes/BoardConfigVendor.mk
 
+# Device specific headers
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 USE_CAMERA_STUB := true
@@ -75,15 +76,12 @@ TARGET_IS_64_BIT := true
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --board Bule
+BOARD_MKBOOTIMG_ARGS := --base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --board $(BUILD_NUMBER)
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
-BOARD_CUSTOM_BOOTIMG := true
-#BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg.mk
-# MKImage
-TARGET_MKIMAGE := $(LOCAL_PATH)/mkimage
-TARGET_USE_BUILT_BOOTIMAGE := true
 
-TARGET_KMODULES := true
+# Add MTK compile options to wrap MTK's modifications on AOSP.
+COMMON_GLOBAL_CFLAGS += -DMTK_AOSP_ENHANCEMENT -DHAVE_AEE_FEATURE -DMTK_SLOW_MOTION_VIDEO_SUPPORT -DMTB_SUPPORT
+COMMON_GLOBAL_CPPFLAGS += -DMTK_AOSP_ENHANCEMENT -DHAVE_AEE_FEATURE -DMTK_SLOW_MOTION_VIDEO_SUPPORT -DMTB_SUPPORT
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
@@ -116,8 +114,6 @@ BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
-
-TARGET_PROVIDES_INIT_RC := true
 
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
