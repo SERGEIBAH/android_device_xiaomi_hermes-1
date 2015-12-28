@@ -21,6 +21,6 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hermes
 PRODUCT_NAME := cm_hermes
-PRODUCT_BRAND := XiaoMi
+PRODUCT_BRAND := xiaomi
 PRODUCT_MODEL := Redmi Note 2
-PRODUCT_MANUFACTURER := XiaoMi
+PRODUCT_MANUFACTURER := xiaomi

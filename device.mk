@@ -38,10 +38,13 @@ else
 endif
 
 PRODUCT_PACKAGES += \
-libxlog
+   libxlog
 
 PRODUCT_COPY_FILES += \
    $(LOCAL_KERNEL):kernel
+
+# No SDCard
+PRODUCT_CHARACTERISTICS := nosdcard
 
 # init
 PRODUCT_PACKAGES += \
@@ -77,10 +80,6 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bt_did.conf:system/etc/bluetooth/bt_did.conf
-
-# Camera                         
-PRODUCT_PACKAGES += \
-      libcamera_client_mtk \
 
 # GPS
 PRODUCT_COPY_FILES += \

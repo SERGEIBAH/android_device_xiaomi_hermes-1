@@ -92,10 +92,6 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
-# Deodex
-#WITH_DEXPREOPT := false
-#DISABLE_DEXPREOPT := true
-
 # Flags
 TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -119,6 +115,8 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # RIL
 #BOARD_RIL_CLASS := $(LOCAL_PATH)/ril/
+BOARD_CONNECTIVITY_VENDOR := MediaTek
+BOARD_CONNECTIVITY_MODULE := conn_soc
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -128,15 +126,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # GPS
 BOARD_GPS_LIBRARIES :=true
-BOARD_CONNECTIVITY_MODULE := MT6630 
 BOARD_MEDIATEK_USES_GPS := true
-
-# FM
-MTK_FM_SUPPORT :=true
-MTK_FM_RX_SUPPORT :=true
-
-# Consumerir
-MTK_IRTX_SUPPORT :=true
 
 # MTK_WLAN_SUPPORT
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -284,11 +274,7 @@ BOARD_SEPOLICY_UNION := \
     icusbd.te \
     xlog.te \
     mobicore.te \
-    install_recovery.te \
-    program_binary.te \
-    genfs_contexts
-
- 
+    program_binary.te
 
 BOARD_SEPOLICY_UNION += \
 	adbd.te \
@@ -352,6 +338,4 @@ BOARD_SEPOLICY_UNION += \
 	md_ctrl.te \
 	cmddumper.te \
 	tunman.te
-
-
 
