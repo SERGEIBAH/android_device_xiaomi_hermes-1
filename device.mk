@@ -217,12 +217,15 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
      ro.mount.fs=EXT4 \
      persist.service.acm.enable=0 \
      persist.sys.usb.config=mtp,mass_storage,adb \
-     persist.sys.timezone=Europe/Moscow
+     persist.sys.timezone=Asia/Shanghai
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.timezone=Asia/Shanghai \
     ro.kernel.android.checkjni=0 \
     ro.telephony.ril_class=MediaTekRIL \
-    ro.telephony.ril.config=fakeiccid 
+    ro.telephony.ril.config=fakeiccid  \
+    persist.call_recording.enabled=true \
+    persist.call_recording.src=1
 
 PRODUCT_PACKAGES += \
     librs_jni \
