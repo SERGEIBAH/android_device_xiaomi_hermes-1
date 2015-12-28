@@ -249,9 +249,6 @@ lib/libcam_platform.so
 lib/libcam_utils.so
 lib/libcamalgo.so
 lib/libcamdrv.so
-lib/libcamera_client.so
-lib/libcamera_client_mtk.so
-lib/libcamera_metadata.so
 lib/libcameracustom.so
 lib/libccci_util.so
 lib/libcurl.so
@@ -452,9 +449,6 @@ lib64/libcam_platform.so
 lib64/libcam_utils.so
 lib64/libcamalgo.so
 lib64/libcamdrv.so
-lib64/libcamera_client.so
-lib64/libcamera_client_mtk.so
-lib64/libcamera_metadata.so
 lib64/libcameracustom.so
 lib64/libccci_util.so
 lib64/libcurl.so

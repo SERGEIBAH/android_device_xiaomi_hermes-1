@@ -81,6 +81,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bt_did.conf:system/etc/bluetooth/bt_did.conf
 
+# Camera
+PRODUCT_PACKAGES += \
+    libcamera_metadata \
+    libcamera_client_mtk
+
 # GPS
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml 
@@ -91,9 +96,9 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/ACCDET.kl:system/usr/keylayout/ACCDET.kl\
      $(LOCAL_PATH)/configs/AVRCP.kl:system/usr/keylayout/AVRCP.kl      
 
-#Light    
+#Light
 PRODUCT_PACKAGES += \
-     lights.mt6795 
+     lights.mt6795
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
