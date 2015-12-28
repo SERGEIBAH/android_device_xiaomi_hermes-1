@@ -212,8 +212,7 @@ PRODUCT_PACKAGES += \
 
 # APK
 PRODUCT_PACKAGES += \
-    MiraVision \
-    libMiraVision_jni
+    MiraVision
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
      ro.adb.secure=0 \

@@ -542,6 +542,7 @@ on post-fs-data
     chmod 0660 /dev/kd_camera_hw_bus2
     chmod 0660 /dev/FM50AF
     chmod 0660 /dev/CAM_CAL_DRV
+    chmod 0660 /dev/OV13853_CAM_CAL_DRV
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
@@ -552,6 +553,7 @@ on post-fs-data
     chown system camera /dev/kd_camera_hw_bus2
     chown system camera /dev/FM50AF
     chown system camera /dev/CAM_CAL_DRV
+    chown system camera /dev/OV13853_CAM_CAL_DRV
 
     #MATV
     chmod 0660 /dev/MATV
@@ -818,6 +820,25 @@ service start_modem /system/bin/md_ctrl 1
 ## mtk printk uart controller
 on property:persist.uartconsole.enable=1
     write /proc/mtprintk 1
+
+## performance mode switch
+on property:persist.sys.aries.power_profile=high
+    start perfmode
+
+service perfmode /system/bin/thermal_manager  /system/etc/.tp/thermal.off.conf
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:persist.sys.aries.power_profile=middle
+    start normalmode
+
+service normalmode /system/bin/thermal_manager  /system/etc/.tp/thermal.conf
+    user root
+    group root
+    oneshot
+    disabled
 
 # Update the second boot logo
 service bootlogoupdater /system/bin/boot_logo_updater
@@ -1131,7 +1152,7 @@ service mtkbt /system/bin/mtkbt
 	socket bt.a2dp.stream dgram 660 bluetooth net_bt
 	user bluetooth
 	group system vpn net_admin inet net_raw net_bt bluetooth net_bt_admin net_bt_stack sdcard_r
-	oneshot
+#	oneshot
 
 #
 #  External Modme control related services
@@ -1451,6 +1472,13 @@ service bootanim /system/bin/bootanimation
     class core
     user graphics
     group graphics media audio
+    disabled
+    oneshot
+
+service hermes /system/bin/hermes
+    user root
+    group root
+    class main
     disabled
     oneshot
 
