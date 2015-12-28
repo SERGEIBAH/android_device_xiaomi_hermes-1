@@ -95,6 +95,8 @@ bin/wifi2agps
 bin/wmt_loader
 bin/xlog
 bin/yamaha537
+etc/android_model_facea.dat
+etc/android_model_faceg.dat
 etc/bluetooth/auto_pair_blacklist.conf
 etc/bluetooth/auto_pair_devlist.conf
 etc/bluetooth/bt_did.conf
@@ -170,6 +172,7 @@ lib/libAGifEncoder.so
 lib/libBnMtkCodec.so
 lib/libClearMotionFW.so
 lib/libDiracAPI_SHARED.so
+lib/libFaceProc.so
 lib/libGdmaScalerPipe.so
 lib/libJniAtvService.so
 lib/libJpgDecPipe.so
@@ -229,6 +232,7 @@ lib/libcam.camshot.so
 lib/libcam.client.so
 lib/libcam.device1.so
 lib/libcam.exif.so
+lib/libcam.faceagegender.so
 lib/libcam.halsensor.so
 lib/libcam.iopipe.so
 lib/libcam.jni.lomohaljni.so
@@ -237,6 +241,7 @@ lib/libcam.paramsmgr.so
 lib/libcam.sdkclient.so
 lib/libcam.utils.sensorlistener.so
 lib/libcam.utils.so
+lib/libcam.watermark.so
 lib/libcam1_utils.so
 lib/libcam_hwutils.so
 lib/libcam_mmp.so
@@ -300,6 +305,7 @@ lib/libjni_imagetransform.so
 lib/libjni_lomoeffect.so
 lib/libjni_pq.so
 lib/libjtranscode.so
+lib/liblogwrap.so
 lib/libm.so
 lib/libm4u.so
 lib/libmatv_cust.so
@@ -314,6 +320,7 @@ lib/libmmprofile.so
 lib/libmmprofile_jni.so
 lib/libmmsdkservice.so
 lib/libmnl.so
+lib/libmp3lame.so
 lib/libmp4enc_sa.ca7.so
 lib/libmpo.so
 lib/libmpodecoder.so
@@ -387,6 +394,7 @@ lib64/hw/mmsdk.default.so
 lib64/hw/sensors.mt6795.so
 lib64/lib3a.so
 lib64/lib3a_sample.so
+lib64/libFaceProc.so
 lib64/libGdmaScalerPipe.so
 lib64/libJpgDecPipe.so
 lib64/libJpgEncPipe.so
@@ -427,6 +435,7 @@ lib64/libcam.camshot.so
 lib64/libcam.client.so
 lib64/libcam.device1.so
 lib64/libcam.exif.so
+lib64/libcam.faceagegender.so
 lib64/libcam.halsensor.so
 lib64/libcam.iopipe.so
 lib64/libcam.jni.lomohaljni.so
@@ -435,6 +444,7 @@ lib64/libcam.paramsmgr.so
 lib64/libcam.sdkclient.so
 lib64/libcam.utils.sensorlistener.so
 lib64/libcam.utils.so
+lib64/libcam.watermark.so
 lib64/libcam1_utils.so
 lib64/libcam_hwutils.so
 lib64/libcam_mmp.so
@@ -504,6 +514,7 @@ lib64/libmmprofile.so
 lib64/libmmprofile_jni.so
 lib64/libmmsdkservice.so
 #lib64/libmnl.so
+lib64/libmp3lame.so
 lib64/libmpo.so
 lib64/libmpoencoder.so
 lib64/libmsbc_mtk.so
