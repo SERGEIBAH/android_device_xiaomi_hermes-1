@@ -47,6 +47,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hermes
 
+# gralloc
+PRODUCT_PACKAGES += \
+   libgralloc_extra
+
 # hack to fix asec on emulated sdcard
 PRODUCT_PACKAGES += \
     asec_helper
@@ -73,6 +77,14 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bt_did.conf:system/etc/bluetooth/bt_did.conf
+
+# Camera                         
+PRODUCT_PACKAGES += \
+      libcamera_client_mtk \
+
+# GPS
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml 
      
 # Keyboard layout
 PRODUCT_COPY_FILES += \
@@ -82,7 +94,7 @@ PRODUCT_COPY_FILES += \
 
 #Light    
 PRODUCT_PACKAGES += \
-      lights.mt6795 
+     lights.mt6795 
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -165,8 +177,10 @@ PRODUCT_PACKAGES += \
 # Wifi
  PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx \
+    libwifi-hal-mt66xx \
     libwpa_client \
     hostapd \
+    hostapd_cli \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -191,16 +205,6 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     YGPS
-
-PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml \
-
-# FM
-PRODUCT_PACKAGES += \
-    autofmd \
-    autofm \
-    FMRadio \
-    FMTransmitter
 
 # APK
 PRODUCT_PACKAGES += \
