@@ -27,6 +27,7 @@ on init
     write /proc/self/coredump_filter 39
     export LD_PRELOAD libsigchain.so:libudf.so 
     write /proc/bootprof "INIT: on init start"
+    export SECONDARY_STORAGE /storage/sdcard1
     # BATTERY proc
     chown radio system /proc/mtk_battery_cmd/current_cmd
     chown radio system /proc/mtk_battery_cmd/discharging_cmd
