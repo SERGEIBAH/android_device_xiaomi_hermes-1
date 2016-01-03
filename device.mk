@@ -112,8 +112,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.project.rc:root/init.project.rc \
     $(LOCAL_PATH)/ramdisk/init.ssd.rc:root/init.ssd.rc \
     $(LOCAL_PATH)/ramdisk/init.xlog.rc:root/init.xlog.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc
+    $(LOCAL_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
+    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc
 
 # Telecom
 PRODUCT_COPY_FILES += \
@@ -258,11 +258,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+#ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 PRODUCT_PACKAGES += WebViewGoogle
 # The following framework overlay must be included if prebuilt WebViewGoogle.apk is used
 PRODUCT_PACKAGE_OVERLAYS += device/xiaomi/hermes/WebViewGoogle/overlay
-endif
+#endif
 
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)

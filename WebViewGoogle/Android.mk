@@ -2,7 +2,7 @@
 # WebView Chromium
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+#ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 include $(CLEAR_VARS)
 LOCAL_MODULE := WebViewGoogle
 LOCAL_MODULE_CLASS := APPS
@@ -18,4 +18,4 @@ LOCAL_REQUIRED_MODULES := \
     libwebviewchromium_loader \
     libwebviewchromium_plat_support
 include $(BUILD_PREBUILT)
-endif
+#endif
