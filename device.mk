@@ -113,7 +113,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.ssd.rc:root/init.ssd.rc \
     $(LOCAL_PATH)/ramdisk/init.xlog.rc:root/init.xlog.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
-    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc
+    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.project.rc:root/factory_init.project.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.rc:root/factory_init.rc \
+    $(LOCAL_PATH)/ramdisk/init:root/init \
+    $(LOCAL_PATH)/ramdisk/init.aee.rc:root/init.aee.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6595.rc:root/init.mt6595.rc \
+    $(LOCAL_PATH)/ramdisk/init.storage.rc:root/init.storage.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.modem.rc:root/meta_init.modem.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.project.rc:root/meta_init.project.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.rc:root/meta_init.rc
+
 
 # Telecom
 PRODUCT_COPY_FILES += \

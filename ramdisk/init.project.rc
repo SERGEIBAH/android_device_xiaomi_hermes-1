@@ -165,7 +165,7 @@ service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
     class core
 
 #start daemon (Registry directories should already be present
-service mobicore /system/bin/mcDriverDaemon -r /system/app/mcRegistry/030b0000000000000000000000000000.drbin -r /system/app/mcRegistry/020f0000000000000000000000000000.drbin -r /system/app/mcRegistry/05120000000000000000000000000000.drbin -r /system/app/mcRegistry/070b0000000000000000000000000000.drbin -r /system/app/mcRegistry/04020000000000000000000000000000.drbin
+service mobicore /system/bin/mcDriverDaemon -r /system/app/mcRegistry/030b0000000000000000000000000000.drbin -r /system/app/mcRegistry/020f0000000000000000000000000000.drbin -r /system/app/mcRegistry/05120000000000000000000000000000.drbin -r /system/app/mcRegistry/070b0000000000000000000000000000.drbin  
     user system
     group system
     class core
